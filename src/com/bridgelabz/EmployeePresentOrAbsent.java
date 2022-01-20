@@ -8,7 +8,7 @@ public class EmployeePresentOrAbsent {
         Random random = new Random();
         int present = 1;
         int wage = 20;
-        int hour = 8;
+        int hour = 4;
         int totalWage;
         int check = random.nextInt(2);
         if (check == present){
@@ -21,6 +21,9 @@ public class EmployeePresentOrAbsent {
         }
 
         System.out.println("Total wage of employee :" + totalWage);
+
+
+
 
     }
 }
