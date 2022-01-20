@@ -13,32 +13,32 @@ public class EmployeePresentOrAbsent {
         int fullTime = 8;
         int dailyWage = 0;
         int totalWage = 0;
-        for(int i=0; i<20; i++) {
+        int totalHours = 0;
+        int numOfDays = 20;
+
+        while (totalHours <= 100 && numOfDays <= 20) {
 
             int check = random.nextInt(3);
 
             switch (check) {
                 case present: {
                     System.out.println("Employee is present");
-                    dailyWage = wagePerHour * fullTime;
-                    totalWage = dailyWage + totalWage;
+                    totalHours = totalHours + fullTime;
                     break;
                 }
                 case absent: {
                     System.out.println("Employee is absent");
-                    dailyWage = 0;
-                    totalWage = dailyWage + totalWage;
+                    totalHours = totalHours + 0;
                     break;
                 }
                 default: {
                     System.out.println("Employee is part time");
-                    dailyWage = wagePerHour * partTime;
-                    totalWage = dailyWage + totalWage;
+                    totalHours = totalHours + partTime;
                     break;
                 }
             }
+            totalWage = totalHours * wagePerHour;
         }
-        System.out.println
-                ("Total Wage : " + totalWage);
-        }
+        System.out.println("Total Wage : " + totalWage);
+    }
 }
