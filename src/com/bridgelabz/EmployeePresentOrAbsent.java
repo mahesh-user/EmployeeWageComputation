@@ -6,31 +6,30 @@ public class EmployeePresentOrAbsent {
 
     public static void main(String[] args) {
         Random random = new Random();
-        int present = 1;
-        int absent = 0;
+        final int present = 1;
+        final int absent = 0;
         int wagePerHour = 20;
         int partTime = 4;
         int fullTime = 8;
         int totalWage;
         int check = random.nextInt(3);
-        if  (check == present){
-            System.out.println("Employee is Present");
-            totalWage = fullTime * wagePerHour ;
+        switch (check ) {
+            case present:{
+               System.out.println("Employee is present");
+               totalWage = wagePerHour * fullTime;
+               break;
+            }
+            case absent:{
+                System.out.println("Employee is absent");
+                totalWage = 0;
+                break;
+            }
+            default:{
+                System.out.println("Employee is part time");
+                totalWage =wagePerHour*partTime;
+                break;
+            }
+            }
+        System.out.println("Total Wage : " + totalWage);
         }
-        else if (check == absent){
-            System.out.println("Employee is Absent");
-            totalWage = 0;
-        }
-
-        else{
-            System.out.println("employee is partTime");
-             totalWage = partTime * wagePerHour;
-        }
-
-        System.out.println("Total wage of employee :" + totalWage);
-
-
-
-
-    }
 }
