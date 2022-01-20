@@ -7,17 +7,24 @@ public class EmployeePresentOrAbsent {
     public static void main(String[] args) {
         Random random = new Random();
         int present = 1;
-        int wage = 20;
-        int hour = 4;
+        int absent = 0;
+        int wagePerHour = 20;
+        int partTime = 4;
+        int fullTime = 8;
         int totalWage;
-        int check = random.nextInt(2);
-        if (check == present){
+        int check = random.nextInt(3);
+        if  (check == present){
             System.out.println("Employee is Present");
-            totalWage = wage * hour;
+            totalWage = fullTime * wagePerHour ;
         }
-        else{
+        else if (check == absent){
             System.out.println("Employee is Absent");
             totalWage = 0;
+        }
+
+        else{
+            System.out.println("employee is partTime");
+             totalWage = partTime * wagePerHour;
         }
 
         System.out.println("Total wage of employee :" + totalWage);
